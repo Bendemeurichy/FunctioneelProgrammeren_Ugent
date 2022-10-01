@@ -24,7 +24,7 @@ schrikkeljaar j  = (mod j 4 == 0 && mod j 100 /= 0) || mod j 400 == 0
 
 -- Bereken de weekdag
 weekdag :: Int -> Int -> Int -> Int -> String
-weekdag dag maand eeuw jaar  = if schrikkeljaar jaar && maand <=2 then zoekWeekdag (mod (dag + zoekMaandgetal maands + zoekJaargetal jaar + zoekEeuwgetal eeuw -1 ) 7)
+weekdag dag maand eeuw jaar  = if schrikkeljaar jaar && maand <=2 then zoekWeekdag (mod (dag + zoekMaandgetal maand + zoekJaargetal jaar + zoekEeuwgetal eeuw -1 ) 7)
                                 else zoekWeekdag(mod (dag + zoekMaandgetal maand + zoekJaargetal jaar + zoekEeuwgetal eeuw ) 7)
 -- Gegeven de eeuw en het jaar geef de
 -- weekdag waarop valentijn valt dat jaar.
